@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@department-of-veterans-affairs/component-library": "^19.1.0",
+    "@department-of-veterans-affairs/formation": "^7.0.8",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -27,5 +28,9 @@
     "@storybook/react": "^7.3.2",
     "@storybook/testing-library": "^0.2.0",
     "storybook": "^7.3.2"
-  }
+  },
+  "resolutions": {
+    "wrap-ansi": "7.0.0",
+    "string-width": "4.1.0"
+    }
 }
