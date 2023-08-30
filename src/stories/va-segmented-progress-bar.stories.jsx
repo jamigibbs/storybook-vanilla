@@ -1,57 +1,23 @@
-import React from 'react';
-
-export const VaSegmentedProgressBar = ({
-  current,
-  total,
-  label,
-}) => {
-  return (
-  // Wrapper for spacing when viewing in storybook
-  // Component can be used without it
-  <div style={{ margin: '3em' }}>
-    <div
-      className="schemaform-title"
-      style={{ alignItems: 'baseline', display: 'flex', marginBottom: '3rem' }}
-    >
-      <h1
-        data-testid="form-title"
-        style={{ marginBottom: 0, paddingRight: '10px' }}
-      >
-        Apply for health care
-      </h1>
-      <div
-        className="schemaform-subtitle"
-        data-testid="form-subtitle"
-        style={{ fontSize: '2rem' }}
-      >
-        Form 10-10EZ
-      </div>
-    </div>
-    <va-segmented-progress-bar
-      current={current}
-      total={total}
-      label={label}
-    ></va-segmented-progress-bar>
-    <div
-      className="schemaform-chapter-progress"
-      style={{ paddingLeft: '2rem' }}
-    >
-      <div className="nav-header nav-header-schemaform">
-        <h2 id="nav-form-header" className="vads-u-font-size--h4" tabIndex="-1">
-          Step 2 of 6: VA Benefits
-        </h2>
-      </div>
-    </div>
-  </div>
-  );
-};
+import { SegmentedProgressBar } from './va-segmented-progress-bar';
 
 export default {
-  title: 'Example/VaSegmentedProgressBar',
-  component: VaSegmentedProgressBar,
+  title: 'Example/Progress bar - segmented',
+  component: SegmentedProgressBar,
+  parameters: {
+    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    current: { control: 'number' },
+    total: { control: 'number' },
+  },
+};
+
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Primary = {
   args: {
-    current: 2,
-    total: 6,
-    label: undefined,
+    current: 3,
+    total: 10,
   },
 };
